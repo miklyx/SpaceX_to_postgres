@@ -43,6 +43,7 @@ In this solution I:
 ## Usage
 
 1. Run ```docker-compose up```
+2. Run ```cd py```
 2. Run ```python3 -m venv env | source env/bin/activate | pip install -r /requirements.txt```
 3. Run ```python3 run_me.py```
 3. Observe DB!
