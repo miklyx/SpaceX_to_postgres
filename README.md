@@ -3,21 +3,21 @@
 This is a quick solution to parse SpaceX GraphQL API and load data into relational model
 
 ## Task
-- Design some base layer of datamarts for analysts
-- Write scripts to fill your datamarts with data
-- Create datamart, that calculates number of publications for missions, rockets and launches
-- Describe Dockerfile and write docker-compose.yml file, that will allow us to run your code and query your RDBMS (`docker-compose build и up`)
-- Share your work in project on GitHub and send us link
+- [x] Design some base layer of datamarts for analysts
+- [x] Write scripts to fill your datamarts with data
+- [x] Create datamart, that calculates number of publications for missions, rockets and launches
+- [ ] Describe Dockerfile and write docker-compose.yml file, that will allow us to run your code and query your RDBMS (`docker-compose build и up`)
+- [x] Share your work in project on GitHub and send us link
 
 
 ## SpaceX DB
 
-In this solution I: 
- - parse spaceX graphql api
- - get entities
- - build statements
- - create tables
- - load data into tables
+This solution: 
+ - parses spaceX graphql api
+ - gets entities
+ - builds statements
+ - creates tables
+ - loads data into tables
  - runs datamarts building
 
  MVP:
