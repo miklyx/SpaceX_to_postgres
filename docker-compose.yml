@@ -1,0 +1,62 @@
+version: "3.9"
+services:
+  spacex:
+    image: postgres:latest
+    container_name: db_container
+    environment:
+      POSTGRES_DB: "spacex-db"
+      POSTGRES_USER: "elon"
+      POSTGRES_PASSWORD: "musk"
+      PGDATA: "/var/lib/postgresql/spacex-db/pgdata"
+    volumes:
+      - ./spacex-db:/docker-entrypoint-initdb.d
+      - .:/var/lib/postgresql/data
+    ports:
+      - "8001:5432"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 4G
+  #pgadmin:
+  #  container_name: pgadmin_container
+  #  image: dpage/pgadmin4:latest
+  #  environment:
+  #    PGADMIN_DEFAULT_EMAIL: "elon@musk.com"
+  #    PGADMIN_DEFAULT_PASSWORD: "musk"
+  #    PGADMIN_CONFIG_SERVER_MODE: "False"
+  #  volumes:
+  #    - ./pgadmin:/var/lib/pgadmin
+  #  ports:
+  #    - "5050:80"
+  #  depends_on:
+  #    - spacex
+  #  restart: unless-stopped
+  #  deploy:
+  #    resources:
+  #      limits:
+  #        cpus: '0.5'
+  #        memory: 1G
+  #  networks:
+  #    - postgres
+  #run_me: 
+  #container_name: dummy_script_run
+  # build: py/
+  # command: python3 ./run_me.py
+  # environment:
+  #    POSTGRES_DB: "spacex-db"
+  #    POSTGRES_USER: "elon"
+  #    POSTGRES_PASSWORD: "musk"
+  #    PGDATA: "/var/lib/postgresql/spacex-db/pgdata"
+  # deploy:
+  #    resources:
+  #      limits:
+  #        cpus: '0.2'
+  #        memory: 500M
+  # depends_on:
+  #    - spacex
+  # networks:
+  #    - postgres
+# networks:
+#  postgres:
+#    driver: bridge
